@@ -41,7 +41,11 @@ function createNew(){
 	echo 'into the home directory...'
     # Provide default path to your projects directory where you want to create project
     cd Documents/Projects
+<<<<<<< HEAD
     if [ ! -d $projectType ] 
+=======
+    	if [ ! -d $projectType ] 
+>>>>>>> Readme file added
 	then
     		mkdir -p $projectType
             echo 'project parent folder with name "'$projectType'" created'
