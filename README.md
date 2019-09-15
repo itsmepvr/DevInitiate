@@ -29,8 +29,8 @@ To run the script type in 'createNew <project name> <project type>'
 
 ## Authors
 
-* **Venkata Ramana P** - *Initial work* - [itsmepvr](https://github.com/itsmepvr)
+* **Venkata Ramana P** - [itsmepvr](https://itsmepvr.github.io)
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License
