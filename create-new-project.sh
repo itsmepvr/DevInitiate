@@ -7,7 +7,7 @@
 # Command : createNew {project name} {project type} 
 
 function createNew(){
-    	echo 'project creation started...'
+    echo 'project creation started...'
 	if [ -z $1 ]
 	then    
 		echo 'Please provide name of the project : '
@@ -39,8 +39,8 @@ function createNew(){
 	echo 'Project Type : '$projectType
 	cd
 	echo 'into the home directory...'
-    	# Provide default path to your projects directory where you want to create project
-    	cd Documents/Projects
+    # Provide default path to your projects directory where you want to create project
+    cd Documents/Projects
     	if [ ! -d $projectType ] 
 	then
     		mkdir -p $projectType
