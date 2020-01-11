@@ -19,8 +19,8 @@ Add your github username and access token in .create_new_project.py
 To run the script type in 'createNew'
 (or)
 To run the script type in 'createNew <project name> <project type>'
-*Ex : createNew myFirstProject py* 
-*y/n to add project to Github
+* Ex : createNew myFirstProject py 
+* y/n to add project to Github
 ```
 * Python     - py
 * Javascript - js
