@@ -1,24 +1,16 @@
 #!/bin/bash
-# Date : Sep 15-2019
-# Created by : Venkata Ramana P (github/itsmepvr)
-# Bash Script to automate project creation
-# Command : createNew
-# (or)
-# Command : createNew {project name} {project type} 
-# Edited: Jan 10-2019
 
-function createNew(){
-    echo 'project creation started...'
+function create_new(){
 	if [ -z $1 ]
 	then    
-		echo 'Please provide name of the project : '
+		echo -n 'Please provide name of the project : '
 		read projectName	  	
 	else
 		projectName=$1
 	fi
 	if [ -z $2 ]
 	then
-		echo 'Please provide type of the project: Python-py, Javascript-js, Bash-b'
+		echo -n 'Please provide type of the project: Python-py, Javascript-js, Bash-b : '
 		read projectType
 	else
 		projectType=$2
@@ -34,27 +26,42 @@ function createNew(){
 		projectType="Bash"
 	else
 		echo 'Usage: create_new [project name] [project type - py or js or b]'
-        return 0
 	fi
-	echo 'Project Name : '$projectName
-	echo 'Project Type : '$projectType
+	echo 'Project Name : "$projectName"'
+	echo 'Project Type : "$projectType"'
 	cd
 	echo 'into the home directory...'
-    # Provide default path to your projects directory where you want to create project
-    cd Documents/Projects
-    if [ ! -d $projectType ] 
-	then
-    		mkdir -p $projectType
-            echo 'project parent folder with name "'$projectType'" created'
-	fi
-	cd $projectType/
+	cd Documents/Projects/$projectType/
 	if [ ! -d $projectName ] 
 	then
     		mkdir -p $projectName
-            echo 'project folder with name "'$projectName'" created'
 	fi
+	echo 'project folder created in home...'
 	cd $projectName
 	echo 'into the project folder...'
+	echo -n 'Do you want to add this project to your Github..? (y/n) : '
+	read githubDecision
+	if [ "$githubDecision" == "y" ]
+	then	
+		cd 	
+		python3 .create_new_project.py $projectName $projectType
+		echo 'Repository created in Github with name $projectName'
+		cd Documents/Projects/$projectType/$projectName
+		git init
+		echo 'git initialisation...'
+		touch README.md
+		echo 'readme file created...'
+		git add .
+		echo 'files added to git...'
+		git commit -m 'First Commit'
+		echo 'commit to git...'
+		git remote add origin https://github.com/itsmepvr/$projectName.git
+		echo 'git remote url set...'
+		git remote -v
+		echo 'new remote url verified...'
+		git push origin master
+		echo 'git push...'
+	fi
 	echo 'Done'
 	code .	
 	echo 'Successfully created project'

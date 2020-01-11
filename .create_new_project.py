@@ -16,8 +16,8 @@ access_token = access_token.decode("utf-8")
 
 def create():	
 	user = Github(username, access_token).get_user()
-	repo = user.create_repo("delete")
-	print("Succesfully created repository {}".format("delete"))
+	repo = user.create_repo(sys.argv[1])
+	print("Succesfully created repository {}".format(sys.argv[1]))
 	
 if __name__ == "__main__":
 	create()
