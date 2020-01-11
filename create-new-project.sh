@@ -1,6 +1,6 @@
 #!/bin/bash
 
-function create_new(){
+function createNew(){
 	if [ -z $1 ]
 	then    
 		echo -n 'Please provide name of the project : '
