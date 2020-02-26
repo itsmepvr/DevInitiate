@@ -1,39 +1,39 @@
-# Book My Show Clone - movie ticket booking
+# Automate Project Creation
 
-Backend API's for movie ticket booking system using Node js, Express, MongoDB & Ejs.
+Automate the boring stuff of creating a project with one line of command.
+* Creates a project folder in specified parent folder.
+* Create repository in github with the project name.
+* Opens the project in vscode editor.  
 
-**1. API to post details of a movie.**
+### Install: 
+```bash
+git clone "https://github.com/itsmepvr/automate-project-creation.git"
+cd automate-project-creation
+source ~/create-new-project.sh
+Then go to create-new-project.sh and set the default path for project folder.
+Add your github username and access token in .create_new_project.py
+```
 
-Request method: POST
+### Usage:
+```bash
+To run the script type in 'createNew'
+(or)
+To run the script type in 'createNew <project name> <project type>'
+* Ex : createNew myFirstProject py 
+* y/n to add project to Github
+```
+* Python     - py
+* Javascript - js
+* Bash       - b
 
-Request URI: http://localhost:9090/movies
+## Built With
 
-Request body (example):
+* Bash Script
+* Python
 
-```{ "movieName":"1917", "nested": [{ "hallName": "GVK Mall", "showTimings": ["10:30", "9:30"], "availableSeats": [[1, 2], [1, 2, 3, 4]]}, { "hallName": "PVR Mall", "showTimings": ["11:30", "5:30"], "availableSeats": [[1], [1, 2, 3, 4]]} }```
+## licensed
 
-
-**2. API to reserve tickets for given seats in a given screen for a movie**
-
-Request method: POST
-
-Request URI: http://localhost:9090/movies/movieName/hallName/showTimings/seatNo
-
-Request body (example):
-
-```{ "movieName":"1917", "hallName": "GVK Mall", "showTimings": "10:30", "seatNo": "2" }```
-
-
-**3. API to get the available seats for a given movie in a screen**
-
-Request method: GET
-
-Request URI: http://localhost:9090/movies/movieName/hallName/
-
-Response body (example):
-
-```{ "movieName":"1917", "hallName": "GVK Mall"}```
-```{ availableSeats: [1, 2] }```
+This project is licensed under the MIT License
 
 ## Authors
 
